@@ -1,7 +1,7 @@
 /*!
  * Pi Dashboard (http://www.nxez.com)
  * Copyright 2017 NXEZ.com.
- * Licensed under the GPL v3.0 license
+ * Licensed under the GPL v3.0 license.
  */
 $(document).ready(function() {
     Highcharts.setOptions({

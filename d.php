@@ -2,7 +2,7 @@
 /*!
 * Pi Dashboard (http://www.nxez.com)
 * Copyright 2017 NXEZ.com.
-* Licensed under the GPL v3.0 license
+* Licensed under the GPL v3.0 license.
 */
 
 @header("content-Type: text/html; charset=utf-8");

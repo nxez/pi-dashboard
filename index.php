@@ -50,7 +50,7 @@ require_once(dirname(__FILE__) . '/d.php');
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a target="_blank" href="http://maker.quwj.com/project/10">Pi Dashboard</a></li>
-                            <li><a target="_blank" href="http://maker.quwj.com/project/10">GitHub Source</a></li>
+                            <li><a target="_blank" href="https://github.com/spoonysonny/pi-dashboard">GitHub Source</a></li>
                             <li class="divider"></li>
                             <li><a target="_blank" href="htpp://shumeipai.nxez.com">ToS & License</a></li>
                         </ul>
