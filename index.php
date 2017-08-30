@@ -249,6 +249,5 @@ require_once(dirname(__FILE__) . '/d.php');
     </div>
 </div>
 <script src="assets/dashboard.min.js"></script>
-<?php if(false) var_dump($D);?>
 </body>
 </html>
