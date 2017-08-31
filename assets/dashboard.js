@@ -248,12 +248,18 @@ $(document).ready(function() {
                 {
                     name: 'IN',
                     data: [0],
-                    color: '#093AC9'
+                    color: '#093AC9',
+                    marker: {
+                        enabled: false
+                    }
                 },
                 {
                     name: 'OUT',
                     data: [0],
-                    color: '#3CCB3E'
+                    color: '#3CCB3E',
+                    marker: {
+                        enabled: false
+                    }
                 }
             ]
         });
@@ -400,9 +406,6 @@ $(document).ready(function() {
                 $("#cpu-stat-iow").text(Math.round(((parseInt(window.dashboard.cpu.stat.iowait) - parseInt(window.dashboard_old.cpu.stat.iowait)) / used_total) * 100 * Math.pow(10,1))/Math.pow(10,1));
                 $("#cpu-stat-irq").text(Math.round(((parseInt(window.dashboard.cpu.stat.irq) - parseInt(window.dashboard_old.cpu.stat.irq)) / used_total) * 100 * Math.pow(10,1))/Math.pow(10,1));
                 $("#cpu-stat-sirq").text(Math.round(((parseInt(window.dashboard.cpu.stat.softirq) - parseInt(window.dashboard_old.cpu.stat.softirq)) / used_total) * 100 * Math.pow(10,1))/Math.pow(10,1));
-
-                //}
-
             }
         }
 
