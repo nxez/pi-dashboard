@@ -120,7 +120,7 @@ function get_info(){
         $D['mem']['used'] = $D['mem']['total']-$D['mem']['free'];
         $D['mem']['percent'] = (floatval($D['mem']['total'])!=0)?round($D['mem']['used']/$D['mem']['total']*100,2):0;
         $D['mem']['real']['used'] = $D['mem']['total'] - $D['mem']['free'] - $D['mem']['cached'] - $D['mem']['buffers'];
-        $D['mem']['real']['free'] = $D['mem']['total'] - $D['mem']['real']['used'];
+        $D['mem']['real']['free'] = round($D['mem']['total'] - $D['mem']['real']['used'],2);
         $D['mem']['real']['percent'] = (floatval($D['mem']['total'])!=0)?round($D['mem']['real']['used']/$D['mem']['total']*100,2):0;
         $D['mem']['swap']['total'] = round($buf[4][0]/1024, 2);
         $D['mem']['swap']['free'] = round($buf[5][0]/1024, 2);
