@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__) . '/d.php');
+require_once(dirname(__FILE__) . '/bootstrap.php');
 ?>
 <html>
 <head>

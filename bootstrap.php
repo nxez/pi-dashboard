@@ -21,7 +21,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == "true"){
 $D['version'] = '1.0.0';
 $D['model'] = get_device_model();
 $D['user'] = @get_current_user();
-$D['hostname'] = $_SERVER['SERVER_NAME'];
+$D['hostname'] = gethostname();
 $D['hostip'] = ('/'==DIRECTORY_SEPARATOR) ? $_SERVER['SERVER_ADDR'] : @gethostbyname($_SERVER['SERVER_NAME']);
 $D['yourip'] = $_SERVER['REMOTE_ADDR'];
 $D['uname'] = @php_uname();
