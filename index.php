@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__) . 'device.php');
+require_once(dirname(__FILE__) . '/device.php');
 ?>
 <html>
 <head>
