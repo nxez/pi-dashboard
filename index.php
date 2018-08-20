@@ -89,7 +89,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
                                     <div class="text-center" style="padding: 10px 0 10px 0; background-color:#FDCCCB;"><span id="cpu-temp" style="font-weight: bolder;">0</span><br /><small class="label">C°</small></div>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0;">
-                                    <div class="text-center" style="padding: 10px 0 10px 0; background-color:#9BCEFD;"><span id="cpu-stat-idl">0</span>%<br /><small class="label">IDEL</small></div>
+                                    <div class="text-center" style="padding: 10px 0 10px 0; background-color:#9BCEFD;"><span id="cpu-stat-idl">0</span>%<br /><small class="label">IDLE</small></div>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2" style="padding: 0;">
                                     <div class="text-center" style="padding: 10px 0 10px 0; background-color:#9BCEFD;"><span id="cpu-stat-use">0</span>%<br /><small class="label">USER</small></div>
