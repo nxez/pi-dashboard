@@ -22,7 +22,7 @@ $D['version'] = '1.0.0';
 $D['model'] = get_device_model();
 $D['user'] = @get_current_user();
 $D['hostname'] = gethostname();
-$D['hostip'] = ('/'==DIRECTORY_SEPARATOR) ? $_SERVER['SERVER_ADDR'] : @gethostbyname($_SERVER['SERVER_NAME']);
+$D['hostip'] = get_device_ip();
 $D['yourip'] = $_SERVER['REMOTE_ADDR'];
 $D['uname'] = @php_uname();
 $D['os'] = explode(" ", php_uname());
@@ -54,6 +54,24 @@ if (($str = @file("/proc/cpuinfo")) !== false){
 else{
     $D['cpu']['count'] = 1;
     $D['cpu']['model'] = '';
+}
+
+function get_device_ip() {
+    $getIp = ('/'==DIRECTORY_SEPARATOR) ? $_SERVER['SERVER_ADDR'] : @gethostbyname($_SERVER['SERVER_NAME']);
+    if($getIp=='127.0.0.1'){
+        $eth0_command="ifconfig eth0 | grep 'inet ' | cut -d: -f2 | awk '{ print $2}'";
+        $eth0_ip = shell_exec($eth0_command);
+        if($eth0_ip==''){
+            $wlan0_command="ifconfig wlan0 | grep 'inet ' | cut -d: -f2 | awk '{ print $2}'";
+            $wlan0_ip = shell_exec($wlan0_command);
+            return $wlan0_ip;
+        }
+        else {
+            return $eth0_ip;
+        }
+    } else {
+        return $getIp;
+    }
 }
 
 function get_device_model(){
