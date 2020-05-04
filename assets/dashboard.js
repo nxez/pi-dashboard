@@ -398,7 +398,7 @@ $(document).ready(function() {
                     point.update(Math.round((1.0 - (idle_diff / used_total)) * 100 * Math.pow(10,1))/Math.pow(10,1));
                 }
 
-
+                $("#cpu-freq").text(window.dashboard.cpu.freq / 1000);
                 $("#cpu-stat-idl").text(Math.round(((parseInt(window.dashboard.cpu.stat.idle) - parseInt(window.dashboard_old.cpu.stat.idle)) / used_total) * 100 * Math.pow(10,1))/Math.pow(10,1));
                 $("#cpu-stat-use").text(Math.round(((parseInt(window.dashboard.cpu.stat.user) - parseInt(window.dashboard_old.cpu.stat.user)) / used_total) * 100 * Math.pow(10,1))/Math.pow(10,1));
                 $("#cpu-stat-sys").text(Math.round(((parseInt(window.dashboard.cpu.stat.sys) - parseInt(window.dashboard_old.cpu.stat.sys)) / used_total) * 100 * Math.pow(10,1))/Math.pow(10,1));

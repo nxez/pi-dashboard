@@ -18,7 +18,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == "true"){
     exit;
 }
 
-$D['version'] = '1.0.0';
+$D['version'] = '1.1.0';
 $D['model'] = get_device_model();
 $D['user'] = @get_current_user();
 $D['hostname'] = gethostname();
@@ -27,18 +27,11 @@ $D['yourip'] = $_SERVER['REMOTE_ADDR'];
 $D['uname'] = @php_uname();
 $D['os'] = explode(" ", php_uname());
 
-if (($str = @file("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")) !== false){
-    $D['cpu']['freq'] = $str[0];
-}
-else{
-    $D['cpu']['freq'] = 0;
-}
-
-
 if (($str = @file("/proc/cpuinfo")) !== false){
     $str = implode("", $str);
     @preg_match_all("/model\s+name\s{0,}\:+\s{0,}([\w\s\)\(\@.-]+)([\r\n]+)/s", $str, $model);
     @preg_match_all("/BogoMIPS\s{0,}\:+\s{0,}([\d\.]+)[\r\n]+/", $str, $bogomips);
+    @preg_match_all("/Model\s{0,}\:+\s{0,}([\w\s\)\(\@.-]+)([\r\n]+)/s", $str, $pimodel);
 
     if (false !== is_array($model[1])){
         $D['cpu']['count'] = sizeof($model[1]);
@@ -50,10 +43,15 @@ if (($str = @file("/proc/cpuinfo")) !== false){
             $D['cpu']['model'] = $model[1][0].$bogomips[1][0].' ×'.$D['cpu']['count'];
         }
     }
+
+    if (false !== is_array($pimodel[1])){
+        $D['model']['pimodel'] = $pimodel[1][0];
+    }
 }
 else{
     $D['cpu']['count'] = 1;
     $D['cpu']['model'] = '';
+    $D['model']['pimodel'] = '';
 }
 
 function get_device_model(){
@@ -71,6 +69,13 @@ function get_info(){
     }
     else{
         $D['uptime'] = 0;
+    }
+
+    if (($str = @file("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq")) !== false){
+        $D['cpu']['freq'] = $str[0];
+    }
+    else{
+        $D['cpu']['freq'] = 0;
     }
 
     // CPU Core

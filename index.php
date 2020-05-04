@@ -7,12 +7,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
     <title>Pi Dashboard</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href="assets/bootstrap.min.css" rel="stylesheet">
     <script src="assets/jquery-3.1.1.min.js"></script>
     <script src="assets/highcharts.js"></script>
@@ -40,16 +35,17 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Pi Dashboard</a>
+                <a class="navbar-brand" href="#"><img style="height: 100%; display: inline; margin-right: 10px;" src="assets/logo.png">Pi Dashboard</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" href="http://shumeipai.nxez.com">树莓派实验室</a></li>
+                    <li><a target="_blank" href="https://shumeipai.nxez.com">树莓派实验室</a></li>
+                    <li><a target="_blank" href="https://talk.quwj.com">趣小组</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a target="_blank" href="http://maker.quwj.com/project/10">Pi Dashboard</a></li>
+                            <li><a target="_blank" href="https://make.quwj.com/project/10">Pi Dashboard</a></li>
                             <li><a target="_blank" href="https://github.com/spoonysonny/pi-dashboard">GitHub Source</a></li>
                         </ul>
                     </li>
@@ -63,6 +59,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
             <div class="col-md-3">
                 <div style="text-align: center; padding: 20px 0;"><img src="assets/devices/<?php echo($D['model']['id']) ?>.png" /></div>
                 <div style="background-color: #E0E0E0; padding: 5px; border-radius: 3px;">
+                    <div class="text-center" style="margin:10px; padding: 10px 0 10px 0; border-radius: 3px;"><div id="pimodel" style="font-size: 90%; font-weight: bolder; text-shadow: 0 1px 0 #fff;"><?php echo($D['model']['pimodel']); ?></div></div>
                     <div class="text-center" style="margin:20px; padding: 10px 0 10px 0; background-color:#CEFCA3; border-radius: 3px;"><div class="label">IP</div><div id="hostip" style="font-size: 150%; font-weight: bolder;"><?php echo($D['hostip']); ?></div></div>
                     <div class="text-center" style="margin:20px; padding: 10px 0 10px 0; background-color:#9DCFFB; border-radius: 3px;"><div class="label">TIME</div><div id="time" style="font-size: 150%; font-weight: bolder;">00:00</div><div id="date">-</div></div>
                     <div class="text-center" style="margin:20px; padding: 10px 0 10px 0; background-color:#FFFECD; border-radius: 3px;"><div class="label">UPTIME</div><div id="uptime" style="font-size: 120%; font-weight: bolder;">0</div></div>
@@ -239,7 +236,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
             <div class="col-md-12">
                 <div id="footer">
                     <hr style="margin: 20px 0 10px 0;" />
-                    <p class="pull-left" style="font-size: 12px;">Powered by <a target="_blank" href="http://maker.quwj.com/project/10"><strong>Pi Dashboard</strong></a> v<?php echo($D['version']) ?>, <a target="_blank" href="http://www.nxez.com">NXEZ.com</a> all rights reserved.
+                    <p class="pull-left" style="font-size: 12px;">Powered by <a target="_blank" href="https://make.quwj.com/project/10"><strong>Pi Dashboard</strong></a> v<?php echo($D['version']) ?>, <a target="_blank" href="https://www.nxez.com">NXEZ.com</a> all rights reserved.
                     </p>
                 </div>
             </div>
