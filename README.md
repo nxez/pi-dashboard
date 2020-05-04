@@ -1,7 +1,7 @@
 # Pi Dashboard
 A WebUI dashboard for IoT devices likes raspberry pi.
 
-Project details: (http://make.quwj.com/project/10)
+Project details: (https://make.quwj.com/project/10)
 
 Copyright 2017-2020 NXEZ.com.
 
