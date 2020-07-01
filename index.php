@@ -245,7 +245,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
 </div>
 <script src="assets/dashboard.min.js"></script>
 <script language="JavaScript">
-    if $("#hostip").text().length > 15 ){
+    if ($("#hostip").text().length > 15 ){
         var scale =  Math.round(15 / $("#hostip").text().length * 15000) / 100 + "%";
         $("#hostip").css("font-size", scale);
     }
