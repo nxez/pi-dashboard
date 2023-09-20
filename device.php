@@ -42,6 +42,21 @@ if (($str = @file("/proc/cpuinfo")) !== false){
         else{
             $D['cpu']['model'] = $model[1][0].$bogomips[1][0].' ×'.$D['cpu']['count'];
         }
+    } else {
+        if (($str = @shell_exec("lscpu")) !== false){
+            $str = implode("", $str);
+            @preg_match_all("/Model\s+name\s{0,}\:+\s{0,}([\w\s\)\(\@.-]+)([\r\n]+)/s", $str, $model);
+            @preg_match_all("/CPU\(s\)\s{0,}\:+\s{0,}(\d+)([\r\n]+)/s", $str, $cpucnt);
+            if (false !== is_array($model[1])) {
+                $D['cpu']['count'] = $cpucnt[1][0];
+                if($D['cpu']['count'] == 1){
+                    $D['cpu']['model'] = $model[1][0].$bogomips[1][0];
+                }
+                else{
+                    $D['cpu']['model'] = $model[1][0].$bogomips[1][0].' ×'.$D['cpu']['count'];
+                }
+            }
+        }
     }
 
     if (false !== is_array($pimodel[1])){
