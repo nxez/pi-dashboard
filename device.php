@@ -33,7 +33,7 @@ if (($str = @file("/proc/cpuinfo")) !== false){
     @preg_match_all("/BogoMIPS\s{0,}\:+\s{0,}([\d\.]+)[\r\n]+/", $str, $bogomips);
     @preg_match_all("/Model\s{0,}\:+\s{0,}([\w\s\)\(\@.-]+)([\r\n]+)/s", $str, $pimodel);
 
-    if (false){
+    if (is_array($model[1]) && !empty($model[1])){
         $D['cpu']['count'] = sizeof($model[1]);
         $bogomips[1][0] = ' | Bogomips:'.$bogomips[1][0];
         if($D['cpu']['count'] == 1){
@@ -48,11 +48,12 @@ if (($str = @file("/proc/cpuinfo")) !== false){
         @preg_match_all("/CPU\(s\)\s{0,}\:+\s{0,}(\d+)([\r\n]+)/s", $str, $cpucnt);
         if (false !== is_array($model[1])) {
             $D['cpu']['count'] = $cpucnt[1][0];
+            $bogomips[1][0] = ' | Bogomips:'.$bogomips[1][0];
             if($D['cpu']['count'] == 1){
-                $D['cpu']['model'] = $model[1][0].' '.$bogomips[1][0];
+                $D['cpu']['model'] = $model[1][0].$bogomips[1][0];
             }
             else{
-                $D['cpu']['model'] = $model[1][0].' '.$bogomips[1][0].' ×'.$D['cpu']['count'];
+                $D['cpu']['model'] = $model[1][0].$bogomips[1][0].' ×'.$D['cpu']['count'];
             }
         }
     }
