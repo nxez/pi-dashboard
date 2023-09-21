@@ -214,7 +214,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2" style="padding: 0;">
                                     <div style="height: 80px; margin-top: 10px;">
-                                        <div class="text-center" style="padding: 2px 0 2px 0; background-color: #CCCCCC;"><strong><span id="net-interface-<?php echo($i+1) ?>-name"><?php echo($D['net']['interfaces'][$i]['name']) ?></span></strong></div>
+                                        <div class="text-center" style="padding: 2px 0 2px 0; background-color: #CCCCCC; word-wrap: break-word;"><strong><span id="net-interface-<?php echo($i+1) ?>-name"><?php echo($D['net']['interfaces'][$i]['name']) ?></span></strong></div>
                                         <div class="text-center" style="padding: 10px 0 10px 0; background-color: #9BCEFD;"><span id="net-interface-<?php echo($i+1) ?>-total-in"><?php echo($D['net']['interfaces'][$i]['total_in']) ?></span><br /><small class="label">IN</small></div>
                                         <div class="text-center" style="padding: 10px 0 10px 0; background-color: #CDFD9F;"><span id="net-interface-<?php echo($i+1) ?>-total-out"><?php echo($D['net']['interfaces'][$i]['total_out']) ?></span><br /><small class="label">OUT</small></div>
                                     </div>
